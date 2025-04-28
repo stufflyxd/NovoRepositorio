@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TelaFuncionario"
+    android:background="@color/black">
+
+    <LinearLayout
+        android:id="@+id/containerFuncionario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="horizontal"
+        android:background="@drawable/conteiner_funcionario"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/profileImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_person"
+            android:background="@drawable/circular_background"
+            android:backgroundTint="@color/blue"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            android:text="Bem vindo(a),\nProfessor(a)"
+            android:gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/barra_pesquisa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@+id/containerFuncionario"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="16dp"
+        android:layout_marginTop="20dp"
+        android:weightSum="1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Meus alunos"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_marginEnd="16dp" />
+
+    <EditText
+        android:id="@+id/search_edit_text"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_weight="1"
+        android:background="@drawable/rounded_edittext"
+        android:hint="Search..."
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:drawableStart="@drawable/ic_eye"
+        android:drawablePadding="10dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:ems="10" />
+    </LinearLayout>
+
+<GridLayout
+        android:id="@+id/gridLayoutListaAlunos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/barra_pesquisa"
+        android:layout_marginTop="20dp"
+        android:columnCount="4"
+        android:rowCount="3"
+        android:padding="8dp">
+
+
+        <!-- Persona 1 -->
+        <LinearLayout
+            android:id="@+id/usuario1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/conteiner_funcionario"
+            android:padding="6dp"
+            android:layout_marginStart="10dp"
+            android:layout_column="0"
+            android:layout_row="0"
+            android:layout_columnWeight="1">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="2dp"
+                android:background="@drawable/circular_background"
+                android:backgroundTint="@color/blue"
+                android:src="@drawable/ic_person"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Usuario 1"
+                android:textColor="@color/white"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <!-- Persona 2 -->
+        <LinearLayout
+            android:id="@+id/usuario2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/conteiner_funcionario"
+            android:padding="6dp"
+            android:layout_marginStart="10dp"
+            android:layout_column="1"
+            android:layout_row="0"
+            android:layout_columnWeight="1">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="2dp"
+                android:background="@drawable/circular_background"
+                android:backgroundTint="@color/blue"
+                android:src="@drawable/ic_person"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Usuario 2"
+                android:textColor="@color/white"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <!-- Persona 3 -->
+        <LinearLayout
+            android:id="@+id/usuario3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/conteiner_funcionario"
+            android:padding="6dp"
+            android:layout_marginStart="10dp"
+            android:layout_column="2"
+            android:layout_row="0"
+            android:layout_columnWeight="1">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="2dp"
+                android:background="@drawable/circular_background"
+                android:backgroundTint="@color/blue"
+                android:src="@drawable/ic_person"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Usuario 3"
+                android:textColor="@color/white"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <!-- Persona 4 -->
+        <LinearLayout
+            android:id="@+id/usuario4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/conteiner_funcionario"
+            android:padding="6dp"
+            android:layout_marginStart="10dp"
+            android:layout_column="3"
+            android:layout_row="0"
+            android:layout_columnWeight="1">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="2dp"
+                android:background="@drawable/circular_background"
+                android:backgroundTint="@color/blue"
+                android:src="@drawable/ic_person"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Usuario 4"
+                android:textColor="@color/white"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <!-- Persona 5 -->
+        <LinearLayout
+            android:id="@+id/usuario5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/conteiner_funcionario"
+            android:padding="6dp"
+            android:layout_marginStart="10dp"
+            android:layout_column="0"
+            android:layout_row="1"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="2dp"
+                android:background="@drawable/circular_background"
+                android:backgroundTint="@color/blue"
+                android:src="@drawable/ic_person"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Usuario 5"
+                android:textColor="@color/white"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <!-- Persona 6 -->
+        <LinearLayout
+            android:id="@+id/usuario6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/conteiner_funcionario"
+            android:padding="6dp"
+            android:layout_marginStart="10dp"
+            android:layout_column="1"
+            android:layout_row="1"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="2dp"
+                android:background="@drawable/circular_background"
+                android:backgroundTint="@color/blue"
+                android:src="@drawable/ic_person"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Usuario 6"
+                android:textColor="@color/white"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <!-- Persona 7 -->
+        <LinearLayout
+            android:id="@+id/usuario7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/conteiner_funcionario"
+            android:padding="6dp"
+            android:layout_marginStart="10dp"
+            android:layout_column="2"
+            android:layout_row="1"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="2dp"
+                android:background="@drawable/circular_background"
+                android:backgroundTint="@color/blue"
+                android:src="@drawable/ic_person"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Usuario 7"
+                android:textColor="@color/white"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <!-- Persona 8 -->
+        <LinearLayout
+            android:id="@+id/usuario8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/conteiner_funcionario"
+            android:padding="6dp"
+            android:layout_marginStart="10dp"
+            android:layout_column="3"
+            android:layout_row="1"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="2dp"
+                android:background="@drawable/circular_background"
+                android:backgroundTint="@color/blue"
+                android:src="@drawable/ic_person"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Usuario 8"
+                android:textColor="@color/white"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <!-- Persona 9 -->
+        <LinearLayout
+            android:id="@+id/usuario9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/conteiner_funcionario"
+            android:padding="6dp"
+            android:layout_marginStart="10dp"
+            android:layout_column="0"
+            android:layout_row="2"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="2dp"
+                android:background="@drawable/circular_background"
+                android:backgroundTint="@color/blue"
+                android:src="@drawable/ic_person"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Usuario 9"
+                android:textColor="@color/white"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <!-- Persona 10 -->
+        <LinearLayout
+            android:id="@+id/usuario10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/conteiner_funcionario"
+            android:padding="6dp"
+            android:layout_marginStart="10dp"
+            android:layout_column="1"
+            android:layout_row="2"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="2dp"
+                android:background="@drawable/circular_background"
+                android:backgroundTint="@color/blue"
+                android:src="@drawable/ic_person"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Usuario 10"
+                android:textColor="@color/white"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <!-- Persona 11 -->
+        <LinearLayout
+            android:id="@+id/usuario11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/conteiner_funcionario"
+            android:padding="6dp"
+            android:layout_marginStart="10dp"
+            android:layout_column="2"
+            android:layout_row="2"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="2dp"
+                android:background="@drawable/circular_background"
+                android:backgroundTint="@color/blue"
+                android:src="@drawable/ic_person"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Usuario 11"
+                android:textColor="@color/white"
+                android:gravity="center"/>
+        </LinearLayout>
+
+        <!-- Persona 12 -->
+        <LinearLayout
+            android:id="@+id/usuario12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/conteiner_funcionario"
+            android:padding="6dp"
+            android:layout_marginStart="10dp"
+            android:layout_column="3"
+            android:layout_row="2"
+            android:layout_columnWeight="1"
+            android:layout_marginTop="10dp"
+            >
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="2dp"
+                android:background="@drawable/circular_background"
+                android:backgroundTint="@color/blue"
+                android:src="@drawable/ic_person"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Usuario 12"
+                android:textColor="@color/white"
+                android:gravity="center"/>
+        </LinearLayout>
+
+    </GridLayout>
+
+
+    <ImageButton
+        android:id="@+id/btn_notificacao"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:background="@drawable/circular_background"
+        android:layout_margin="16dp"
+        android:contentDescription="Nao sei ainda"
+        app:layout_constraintTop_toBottomOf="@+id/gridLayoutListaAlunos"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#202020"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu_bottom_nav_funcionario" />
+</androidx.constraintlayout.widget.ConstraintLayout>

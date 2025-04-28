@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TelaCriarFichaTreino2_Funcionario"
+    android:background="@color/black">
+
+    <!-- ScrollView para tornar o conteúdo rolável -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <!-- LinearLayout para cabeçalho -->
+            <LinearLayout
+                android:id="@+id/titulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageButton
+                    android:id="@+id/SetaVoltarTelaCriarFicha2"
+                    android:layout_width="48sp"
+                    android:layout_height="48sp"
+                    android:contentDescription="@string/seta_voltar"
+                    android:src="@drawable/ic_arrow_back"
+                    android:backgroundTint="@color/black"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:textSize="23sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/letraFicha"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="A"
+                        android:textColor="@color/blue"
+                        android:textSize="50sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/nomeFicha"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(nome da ficha)   "
+                        android:textColor="@color/white"
+
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/titulo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:paddingBottom="20dp"
+                android:paddingTop="10dp"
+                android:background="@drawable/conteiner_funcionario"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Configuração das series"
+                    android:textColor="@color/blue"
+                    android:textStyle="bold"
+                    android:textSize="24sp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    />
+
+                <!-- Linha separadora -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:color/darker_gray" />
+
+
+
+                <LinearLayout
+                    android:id="@+id/ExercicioNovo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:padding="8dp">
+
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:src="@drawable/icon_rectangle" />
+
+                        <TextView
+                            android:id="@+id/txtNomeExercicio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Puxada alta Aberta"
+                            android:textColor="@color/white" />
+
+                        <ImageButton
+                            android:id="@+id/btnAddExercio_telaCriar2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="#202020"
+                            android:contentDescription="Botão de adicionar exercicio"
+                            android:src="@drawable/plus_circle"
+                            />
+
+                    </LinearLayout>
+
+                    <!-- Linha separadora -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@android:color/darker_gray" />
+
+
+
+                    <LinearLayout
+                        android:id="@+id/conteinerSerie"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="1dp"
+                        android:gravity="center"
+                        >
+                        <!-- LinearLayout para a série -->
+                        <LinearLayout
+                            android:id="@+id/serie1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="15dp"
+                            android:background="@drawable/rounded_edittext"
+                            android:backgroundTint="@color/black"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="10dp"
+                            android:weightSum="1">
+
+                            <!-- Número da série -->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="15dp"
+                                android:text="1"
+                                android:textColor="@color/white"
+                                android:textSize="28sp" />
+
+                            <!-- Campo para repetições -->
+                            <EditText
+                                android:id="@+id/editRepeticoes1"
+                                android:layout_width="60dp"
+                                android:layout_height="48dp"
+                                android:layout_marginEnd="10dp"
+                                android:background="@drawable/rounded_edittext"
+                                android:backgroundTint="#202020"
+                                android:drawableLeft="@drawable/icon_repeticao"
+                                android:drawablePadding="8dp"
+                                android:drawableTint="@color/white"
+                                android:inputType="number"
+                                android:padding="8dp"
+                                android:text="10"
+                                android:textColor="@color/white"
+                                android:textSize="16sp" />
+
+                            <!-- Campo para peso -->
+                            <EditText
+                                android:id="@+id/editPeso1"
+                                android:layout_width="65dp"
+                                android:layout_height="48dp"
+                                android:layout_marginEnd="10dp"
+                                android:background="@drawable/rounded_edittext"
+                                android:backgroundTint="#202020"
+                                android:inputType="none"
+                                android:padding="8dp"
+                                android:text="10 Kg"
+                                android:textColor="@color/white"
+                                android:textSize="16sp" />
+
+                            <!-- Campo para tempo -->
+                            <EditText
+                                android:id="@+id/editTempo1"
+                                android:layout_width="60dp"
+                                android:layout_height="48dp"
+                                android:layout_marginEnd="5dp"
+                                android:background="@drawable/rounded_edittext"
+                                android:backgroundTint="#202020"
+                                android:drawableLeft="@drawable/icon_relogio"
+                                android:drawablePadding="8dp"
+                                android:drawableTint="@color/white"
+                                android:inputType="none"
+                                android:padding="8dp"
+                                android:text="10"
+                                android:textColor="@color/white"
+                                android:textSize="16sp" />
+
+                            <!-- Botão de excluir série -->
+                            <ImageButton
+                                android:id="@+id/btnExcluirSerie1"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_marginStart="20dp"
+                                android:backgroundTint="@color/black"
+                                android:contentDescription="Botão de excluir série"
+                                android:src="@drawable/icon_lixeiro" />
+
+                        </LinearLayout>
+
+
+                        <!-- LinearLayout para a série -->
+                        <LinearLayout
+                            android:id="@+id/serie2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="15dp"
+                            android:background="@drawable/rounded_edittext"
+                            android:backgroundTint="@color/black"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="10dp"
+                            android:weightSum="1">
+
+                            <!-- Número da série -->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="15dp"
+                                android:text="2"
+                                android:textColor="@color/white"
+                                android:textSize="28sp" />
+
+                            <!-- Campo para repetições -->
+                            <EditText
+                                android:id="@+id/editRepeticoes2"
+                                android:layout_width="60dp"
+                                android:layout_height="48dp"
+                                android:layout_marginEnd="10dp"
+                                android:background="@drawable/rounded_edittext"
+                                android:backgroundTint="#202020"
+                                android:drawableLeft="@drawable/icon_repeticao"
+                                android:drawablePadding="8dp"
+                                android:drawableTint="@color/white"
+                                android:inputType="number"
+                                android:padding="8dp"
+                                android:text="10"
+                                android:textColor="@color/white"
+                                android:textSize="16sp" />
+
+                            <!-- Campo para peso -->
+                            <EditText
+                                android:id="@+id/editPeso2"
+                                android:layout_width="65dp"
+                                android:layout_height="48dp"
+                                android:layout_marginEnd="10dp"
+                                android:background="@drawable/rounded_edittext"
+                                android:backgroundTint="#202020"
+                                android:inputType="none"
+                                android:padding="8dp"
+                                android:text="10 Kg"
+                                android:textColor="@color/white"
+                                android:textSize="16sp" />
+
+                            <!-- Campo para tempo -->
+                            <EditText
+                                android:id="@+id/editTempo2"
+                                android:layout_width="60dp"
+                                android:layout_height="48dp"
+                                android:layout_marginEnd="5dp"
+                                android:background="@drawable/rounded_edittext"
+                                android:backgroundTint="#202020"
+                                android:drawableLeft="@drawable/icon_relogio"
+                                android:drawablePadding="8dp"
+                                android:drawableTint="@color/white"
+                                android:inputType="none"
+                                android:padding="8dp"
+                                android:text="10"
+                                android:textColor="@color/white"
+                                android:textSize="16sp" />
+
+                            <!-- Botão de excluir série -->
+                            <ImageButton
+                                android:id="@+id/btnExcluirSerie2"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_marginStart="20dp"
+                                android:backgroundTint="@color/black"
+                                android:contentDescription="Botão de excluir série"
+                                android:src="@drawable/icon_lixeiro" />
+
+                        </LinearLayout>
+
+                        <!-- LinearLayout para a série -->
+
+                        <LinearLayout
+                            android:id="@+id/serie3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="15dp"
+                            android:background="@drawable/rounded_edittext"
+                            android:backgroundTint="@color/black"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:padding="10dp"
+                            android:weightSum="1">
+
+                            <!-- Número da série -->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="15dp"
+                                android:text="3"
+                                android:textColor="@color/white"
+                                android:textSize="28sp" />
+
+                            <!-- Campo para repetições -->
+                            <EditText
+                                android:id="@+id/editRepeticoes3"
+                                android:layout_width="60dp"
+                                android:layout_height="48dp"
+                                android:layout_marginEnd="10dp"
+                                android:background="@drawable/rounded_edittext"
+                                android:backgroundTint="#202020"
+                                android:drawableLeft="@drawable/icon_repeticao"
+                                android:drawablePadding="8dp"
+                                android:drawableTint="@color/white"
+                                android:inputType="number"
+                                android:padding="8dp"
+                                android:text="10"
+                                android:textColor="@color/white"
+                                android:textSize="16sp" />
+
+                            <!-- Campo para peso -->
+                            <EditText
+                                android:id="@+id/editPeso3"
+                                android:layout_width="65dp"
+                                android:layout_height="48dp"
+                                android:layout_marginEnd="10dp"
+                                android:background="@drawable/rounded_edittext"
+                                android:backgroundTint="#202020"
+                                android:inputType="none"
+                                android:padding="8dp"
+                                android:text="10 Kg"
+                                android:textColor="@color/white"
+                                android:textSize="16sp" />
+
+                            <!-- Campo para tempo -->
+                            <EditText
+                                android:id="@+id/editTempo3"
+                                android:layout_width="60dp"
+                                android:layout_height="48dp"
+                                android:layout_marginEnd="5dp"
+                                android:background="@drawable/rounded_edittext"
+                                android:backgroundTint="#202020"
+                                android:drawableLeft="@drawable/icon_relogio"
+                                android:drawablePadding="8dp"
+                                android:drawableTint="@color/white"
+                                android:inputType="none"
+                                android:padding="8dp"
+                                android:text="10"
+                                android:textColor="@color/white"
+                                android:textSize="16sp" />
+
+                            <!-- Botão de excluir série -->
+                            <ImageButton
+                                android:id="@+id/btnExcluirSerie3"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_marginStart="20dp"
+                                android:backgroundTint="@color/black"
+                                android:contentDescription="Botão de excluir série"
+                                android:src="@drawable/icon_lixeiro" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnAdicionar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="230dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="@color/blue"
+        android:text="Adicionar"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#202020"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu_bottom_nav_funcionario" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

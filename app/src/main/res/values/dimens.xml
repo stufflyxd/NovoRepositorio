@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dimensões para as séries -->
+    <dimen name="serie_margin_horizontal">15dp</dimen>
+    <dimen name="serie_margin_top">10dp</dimen>
+    <dimen name="serie_padding">10dp</dimen>
+    <dimen name="serie_number_margin">15dp</dimen>
+
+    <!-- Dimensões para os campos -->
+    <dimen name="repetition_width">60dp</dimen>
+    <dimen name="weight_width">65dp</dimen>
+    <dimen name="time_width">60dp</dimen>
+    <dimen name="field_height">48dp</dimen>
+    <dimen name="field_margin">10dp</dimen>
+    <dimen name="time_margin">5dp</dimen>
+    <dimen name="field_padding">8dp</dimen>
+    <dimen name="icon_padding">8dp</dimen>
+
+    <!-- Dimensões para o botão de excluir -->
+    <dimen name="delete_button_size">48dp</dimen>
+    <dimen name="delete_button_margin">20dp</dimen>
+
+
+    <dimen name="largura_ficha">345dp</dimen>
+    <dimen name="margem_superior_ficha">24dp</dimen>
+    <dimen name="margem_inferior_ficha">16dp</dimen>
+    <dimen name="padding_inferior_ficha">20dp</dimen>
+    <dimen name="margem_horizontal_titulo">20dp</dimen>
+    <dimen name="margem_superior_titulo">15dp</dimen>
+    <dimen name="margem_direita_letra">8dp</dimen>
+    <dimen name="altura_linha">2dp</dimen>
+    <dimen name="margem_superior_linha">10dp</dimen>
+</resources>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#004DFF"
+    android:padding="24dp">
+
+    <!-- Ícone do halter e nome do app -->
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/logo_unipump_nobk"
+        android:contentDescription="Ícone de halteres"
+        android:layout_gravity="center"
+        app:tint="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/appName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="UniPump"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="center"/>
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/tipoUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tipo de usuário"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="32dp"
+        android:layout_gravity="center"/>
+
+    <!-- Botões -->
+    <Button
+        android:id="@+id/btnAluno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Aluno"
+        android:backgroundTint="#FFFFFF"
+        android:textColor="#004DFF"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:padding="12dp"/>
+
+    <Button
+        android:id="@+id/btnFuncionario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Funcionário"
+        android:backgroundTint="#FFFFFF"
+        android:textColor="#004DFF"
+        android:padding="12dp"/>
+
+</LinearLayout>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <style name="LinearLayout_logo">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">64dp</item>
+    </style>
+
+    <!-- Estilo para o ImageView dentro do LinearLayout -->
+    <style name="ImageView_logo">
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">80dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:contentDescription">@string/app_name_descrição</item>
+        <item name="android:src">@drawable/logo_unipump_nobk</item>
+    </style>
+
+    <!-- Estilo para o TextView dentro do LinearLayout -->
+    <style name="TextView_logo">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <!-- Estilo para o TextView de redefinir senha -->
+    <style name="TextViewRedefinirSenha_esqueceuSenha">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_marginTop">20dp</item>
+    </style>
+
+    <!-- Estilo para o LinearLayout container -->
+    <style name="LinearLayout_esqueceuSenha">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">24dp</item>
+        <item name="android:background">@drawable/container_components</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:layout_marginBottom">60dp</item>
+        <item name="android:layout_marginStart">15dp</item>
+        <item name="android:layout_marginEnd">15dp</item>
+    </style>
+
+    <!-- Estilo para o TextView Título -->
+    <style name="TextViewTitle_esqueceuSenha">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#A9A9A9</item>
+        <item name="android:layout_marginTop">3dp</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <!-- Estilo para o TextView de instruções -->
+    <style name="TextViewInstruction_esqueceuSenha">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <!-- Estilo para o EditText (campo de email ou telefone) -->
+    <style name="EditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:background">@drawable/rounded_edittext</item>
+        <item name="android:backgroundTint">@color/azul_claro</item>
+        <item name="android:maxLength">25</item>
+        <item name="android:autofillHints">""</item>
+        <item name="android:inputType">text</item>
+    </style>
+
+    <!-- Estilo para o AppCompatButton (Botão Enviar) -->
+    <style name="Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:background">@drawable/rounded_button</item>
+        <item name="android:backgroundTint">#004AF7</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginHorizontal">60dp</item>
+    </style>
+
+    <!-- res/values/styles.xml -->
+    <style name="CalendarDateText" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="CalendarWeekDayText" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textColor">@android:color/darker_gray</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+
+
+
+
+</resources>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.UniPump"
+        tools:targetApi="31">
+        <activity
+            android:name=".TelaRelatorioSemanal"
+            android:exported="false" />
+        <activity
+            android:name=".TelaExercicioFinalizado"
+            android:exported="false" />
+        <activity
+            android:name=".TelaExercicio2"
+            android:exported="false" />
+        <activity
+            android:name=".TelaExercicio1"
+            android:exported="false" />
+        <activity
+            android:name=".TelaFichaTreino"
+            android:exported="false" />
+        <activity
+            android:name=".TelaCriarFichaTreino2_Funcionario"
+            android:exported="false" /> <!-- Versão atualizada do seu arquivo de atividades -->
+        <activity
+            android:name=".TelaCriarFichaTreino_Funcionario"
+            android:exported="false" />
+        <activity
+            android:name=".TelaGerenciamentoAlunoNovo_Funcionario"
+            android:exported="false" /> <!-- Versão atualizada do seu arquivo de atividades -->
+        <activity
+            android:name=".TelaInformacoesPessoaisAluno"
+            android:exported="false" />
+        <activity
+            android:name=".TelaTreinoAluno"
+            android:exported="false" /> <!-- Atividades da branch 'confia' -->
+        <activity
+            android:name=".TelaEdicaoFichaTreino_funcionario"
+            android:exported="false" />
+        <activity
+            android:name=".TelaNotificacao_funcionario"
+            android:exported="false" />
+        <activity
+            android:name=".TelaChat_funcionario"
+            android:exported="false" />
+        <activity
+            android:name=".TelaInformacaoPessoal_funcionario"
+            android:exported="false" />
+        <activity
+            android:name=".GerenciamentoDoAluno_Funcionario"
+            android:exported="false" /> <!-- Outras atividades existentes -->
+        <activity
+            android:name=".TelaPrincipalAluno"
+            android:exported="false" />
+        <activity
+            android:name=".TelaEsqueceuSenha4"
+            android:exported="false" />
+        <activity
+            android:name=".TelaEsqueceuSenha3"
+            android:exported="false" />
+        <activity
+            android:name=".TelaEsqueceuSenha2"
+            android:exported="false" />
+        <activity
+            android:name=".TelaFuncionario"
+            android:exported="false" />
+        <activity
+            android:name=".TelaEsqueceuSenha"
+            android:exported="false" />
+        <activity
+            android:name=".TelaLogin"
+            android:exported="false" />
+        <activity
+            android:name=".TelaConfig"
+            android:exported="false" />
+
+        <activity
+            android:name=".TelaIdioma"
+            android:exported="false"/>
+
+        <activity
+            android:name=".TelaPref"
+            android:exported="false"/>
+
+        <activity
+            android:name=".TelaSobre"
+            android:exported="false"/>
+        <activity
+            android:name=".TelaInicial"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

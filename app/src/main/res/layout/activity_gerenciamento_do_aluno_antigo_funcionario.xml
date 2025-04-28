@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".GerenciamentoDoAluno_Funcionario">
+
+    <!-- ScrollView para permitir rolagem -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <!-- ConstraintLayout para todo o conteúdo -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- LinearLayout para cabeçalho -->
+            <LinearLayout
+                android:id="@+id/SobreOAluno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageButton
+                    android:id="@+id/SetaVoltarTelaGerenciamentoAluno"
+                    android:layout_width="48sp"
+                    android:layout_height="48sp"
+                    android:contentDescription="@string/seta_voltar"
+                    android:src="@drawable/ic_arrow_back"
+                    android:backgroundTint="@color/black"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/sobre_o_aluno"
+                    android:textColor="@color/white"
+                    android:textSize="23sp" />
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_margin="2dp"
+                    android:background="@drawable/circular_background"
+                    android:backgroundTint="@color/blue"
+                    android:contentDescription="@string/perfil_usuario"
+                    android:src="@drawable/ic_person"
+                    android:layout_gravity="end"/>
+            </LinearLayout>
+
+            <!-- Container para dados do aluno -->
+            <LinearLayout
+                android:id="@+id/DadosAluno"
+                android:layout_width="345dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/conteiner_funcionario"
+                app:layout_constraintTop_toBottomOf="@+id/SobreOAluno"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <!-- Título e instrução -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dados_do_aluno"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:id="@+id/link_mais_detalhes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mais_detalhes"
+                        android:textColor="@color/azul_link"
+                        android:layout_gravity="center_vertical"
+                        />
+                </LinearLayout>
+
+                <!-- Linha separadora -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray"
+                    android:layout_marginTop="15dp"/>
+
+                <!-- Campos para altura e peso -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="20dp"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/altura"
+                        android:textColor="@color/white"
+                        android:layout_marginStart="23dp"
+                        android:layout_marginTop="15dp"
+                        android:textSize="17sp"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@drawable/rounded_edittext"
+                        android:backgroundTint="@color/black"
+                        android:importantForAccessibility="yes"
+                        android:contentDescription="@string/informar_altura"
+                        android:inputType="text"
+                        android:text="1,80 m"
+                        android:paddingStart="20dp"
+                        android:textColor="@color/white"
+                        android:maxLength="20"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/peso"
+                        android:textColor="@color/white"
+                        android:layout_marginStart="23dp"
+                        android:layout_marginTop="15dp"
+                        android:textSize="17sp"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:background="@drawable/rounded_edittext"
+                        android:backgroundTint="@color/black"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:contentDescription="@string/informar_peso"
+                        android:autofillHints="name"
+                        android:inputType="text"
+                        android:text="80 Kg"
+                        android:paddingStart="20dp"
+                        android:textColor="@color/white"
+                        android:maxLength="20"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Container adicional para mais dados -->
+            <LinearLayout
+                android:layout_width="345dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/conteiner_funcionario"
+                app:layout_constraintTop_toBottomOf="@+id/DadosAluno"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <!-- Título e mais detalhes -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:orientation="horizontal"
+                    android:gravity="start|center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Fichas de Treinos"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:id="@+id/link_modificar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/modificar"
+                        android:textColor="@color/azul_link"/>
+                </LinearLayout>
+
+                <!-- Linha separadora -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray"
+                    android:layout_marginTop="15dp"/>
+
+                <!-- Opções de treino -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp">
+
+                    <!-- Opção A -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="start|center_vertical"
+                        android:background="@drawable/rounded_edittext"
+                        android:backgroundTint="@color/black"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="20dp"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="A"
+                            android:textStyle="bold"
+                            android:textColor="@color/blue"
+                            android:textSize="45sp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="10dp"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Costas e bíceps"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            android:layout_marginStart="10dp"/>
+                    </LinearLayout>
+
+                    <!-- Opção B -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="start|center_vertical"
+                        android:background="@drawable/rounded_button"
+                        android:backgroundTint="@color/black"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="B"
+                            android:textStyle="bold"
+                            android:textColor="@color/blue"
+                            android:textSize="45sp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="10dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Peito e tríceps"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            android:layout_marginStart="10dp"/>
+                    </LinearLayout>
+
+                    <!-- Opção C -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="start|center_vertical"
+                        android:background="@drawable/rounded_button"
+                        android:backgroundTint="@color/black"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="20dp"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="C"
+                            android:textStyle="bold"
+                            android:textColor="@color/blue"
+                            android:textSize="45sp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="10dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Inferiores completo"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            android:layout_marginStart="10dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#202020"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu_bottom_nav_funcionario" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
