@@ -78,7 +78,10 @@ class TelaLogin : AppCompatActivity() {
         val usuario = edtEmail.text.toString()
         val senha = edtSenha.text.toString()
 
-        val tipo = intent.getStringExtra("tipo")
+        val tipo = intent.getStringExtra("tipo") ?: run {
+            Toast.makeText(this, "Tipo de usuário não definido.", Toast.LENGTH_SHORT).show()
+            return
+        }
 
         if (tipo == "aluno") {
             // Para alunos: valida se o e-mail ou telefone é válido
