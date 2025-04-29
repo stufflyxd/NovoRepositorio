@@ -8,6 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class TelaInformacoesPessoaisAluno : AppCompatActivity() {
 
@@ -19,6 +20,36 @@ class TelaInformacoesPessoaisAluno : AppCompatActivity() {
 
         setContentView(R.layout.activity_tela_informacoes_pessoais_aluno)
         btn_voltar = findViewById(R.id.btn_back)
+
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+
+        bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_inicio -> {
+                    val intent = Intent(this, TelaPrincipalAluno::class.java)
+                    startActivity(intent)
+                    true
+                }
+
+                R.id.nav_treinos -> {
+                    val intent = Intent(this, TelaTreinoAluno::class.java)
+                    startActivity(intent)
+                    true
+                }
+
+                R.id.nav_config -> {
+                    true
+                }
+
+                R.id.nav_chat -> {
+                    val intent = Intent(this,TelaChat::class.java)
+                    startActivity(intent)
+                    true
+                }
+
+                else -> false
+            }
+        }
 
     }
 

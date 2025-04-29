@@ -53,33 +53,33 @@
         android:layout_marginTop="20dp"
         android:weightSum="1">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Meus alunos"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:layout_marginEnd="16dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Meus alunos"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:layout_marginEnd="16dp" />
 
-    <EditText
-        android:id="@+id/search_edit_text"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_weight="1"
-        android:background="@drawable/rounded_edittext"
-        android:hint="Search..."
-        android:textColorHint="@color/black"
-        android:textColor="@color/black"
-        android:drawableStart="@drawable/ic_eye"
-        android:drawablePadding="10dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:ems="10" />
+        <EditText
+            android:id="@+id/search_edit_text"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_edittext"
+            android:hint="Search..."
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:drawableStart="@drawable/ic_eye"
+            android:drawablePadding="10dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:ems="10" />
     </LinearLayout>
 
-<GridLayout
+    <GridLayout
         android:id="@+id/gridLayoutListaAlunos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -470,6 +470,8 @@
         android:layout_height="56dp"
         android:background="@drawable/circular_background"
         android:layout_margin="16dp"
+        android:src="@drawable/ic_notifications"
+        android:backgroundTint="@color/azul"
         android:contentDescription="Nao sei ainda"
         app:layout_constraintTop_toBottomOf="@+id/gridLayoutListaAlunos"
         app:layout_constraintBottom_toTopOf="@id/bottom_navigation"

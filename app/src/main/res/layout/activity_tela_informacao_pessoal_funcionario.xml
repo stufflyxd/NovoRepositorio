@@ -22,30 +22,34 @@
             android:orientation="vertical"
             android:paddingBottom="16dp">
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/back_button"
-                android:scaleType="centerInside"
-                android:layout_marginTop="50dp"
-                android:contentDescription="@string/seta_voltar"
-                android:layout_marginStart="20dp"/>
-
-
-
-            <TextView
+            <LinearLayout
+                android:layout_marginTop="15dp"
                 android:id="@+id/text_info_pessoais_aluno"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Informações pessoais"
-                android:textColor="@color/white"
-                android:textSize="24sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="100dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp" />
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/SetaVoltarTelaGerenciamentoAluno"
+                    android:layout_width="48sp"
+                    android:layout_height="48sp"
+                    android:contentDescription="@string/seta_voltar"
+                    android:src="@drawable/ic_arrow_back"
+                    android:backgroundTint="@color/black"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Informações pessoais"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:layout_marginTop="10dp"
+                    />
+
+            </LinearLayout>
+
+
+
 
             <LinearLayout
                 android:id="@+id/conteiner_info_aluno"
@@ -55,7 +59,9 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/text_info_pessoais_aluno"
-                android:layout_margin="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 android:background="@drawable/funda_cinza_rounded"
                 android:padding="10dp">
 
@@ -118,7 +124,7 @@
                         <EditText
                             android:id="@+id/campo_endereco_usuario"
                             android:layout_width="290dp"
-                            android:layout_height="46dp"
+                            android:layout_height="45dp"
                             android:autofillHints=""
                             android:inputType="text"
                             android:text="AV. Washington Soarez"
@@ -156,7 +162,7 @@
                         <EditText
                             android:id="@+id/genero"
                             android:layout_width="290dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="45dp"
                             android:autofillHints=""
                             android:inputType="text"
                             android:text="Masculino"
@@ -194,7 +200,7 @@
                         <EditText
                             android:id="@+id/numero_contato"
                             android:layout_width="290dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="45dp"
                             android:autofillHints=""
                             android:inputType="text"
                             android:text="+55 (85) 940028922"
@@ -233,9 +239,10 @@
                         <TextView
                             android:id="@+id/primeiro_nome_usuario"
                             android:layout_width="290dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="45dp"
                             android:autofillHints=""
                             android:inputType="text"
+                            android:gravity="center_vertical"
                             android:text="Pedro"
                             android:textColor="@color/gray_line"
                             android:textSize="20sp"/>
@@ -265,9 +272,10 @@
                         <TextView
                             android:id="@+id/sobrenome_usuario"
                             android:layout_width="290dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="45dp"
                             android:autofillHints=""
                             android:inputType="text"
+                            android:gravity="center_vertical"
                             android:text="Augusto"
                             android:textColor="@color/gray_line"
                             android:textSize="20sp"/>
@@ -297,9 +305,10 @@
                         <TextView
                             android:id="@+id/campo_idade_usuario"
                             android:layout_width="290dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="45dp"
                             android:autofillHints=""
                             android:inputType="text"
+                            android:gravity="center_vertical"
                             android:text="21"
                             android:textColor="@color/gray_line"
                             android:textSize="20sp"/>
@@ -310,30 +319,23 @@
 
             </LinearLayout>
 
-            <ImageView
-                android:id="@+id/btn_back"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_marginTop="24dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.049"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/back_button" />
+
 
         </LinearLayout>
     </ScrollView>
 
+    <!-- Bottom Navigation -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/black"
-        app:menu="@menu/menu_bottom_nav"
-        app:labelVisibilityMode="labeled"
+        android:background="#202020"
         app:itemIconTint="@color/white"
         app:itemTextColor="@color/white"
+        app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:menu="@menu/menu_bottom_nav_funcionario" />
 </androidx.constraintlayout.widget.ConstraintLayout>

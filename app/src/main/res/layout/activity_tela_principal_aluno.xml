@@ -36,12 +36,20 @@
             android:textSize="16sp"
             android:layout_marginStart="8dp" />
 
-        <ImageView
+
+        <ImageButton
             android:id="@+id/btn_notificacao"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="@drawable/circular_background"
+            android:layout_margin="16dp"
             android:src="@drawable/ic_notifications"
-            android:contentDescription="Notificações" />
+            android:backgroundTint="@color/azul"
+            android:contentDescription="Nao sei ainda"
+            app:layout_constraintTop_toBottomOf="@+id/gridLayoutListaAlunos"
+            app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
     </LinearLayout>
 
     <!-- Card de treino -->

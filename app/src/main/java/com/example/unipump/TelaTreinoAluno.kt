@@ -11,7 +11,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class TelaTreinoAluno : AppCompatActivity() {
 
-   private lateinit var ficha_1: LinearLayout
+    private lateinit var ficha_1: LinearLayout
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,7 +47,8 @@ class TelaTreinoAluno : AppCompatActivity() {
                     true
                 }
                 R.id.nav_chat -> {
-                    // val intent = Intent(this, )
+                    val intent = Intent(this,TelaChat::class.java)
+                    startActivity(intent)
                     true
                 }
                 else -> false

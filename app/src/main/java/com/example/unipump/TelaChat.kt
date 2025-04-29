@@ -15,6 +15,7 @@ class TelaChat : AppCompatActivity() {
         setContentView(R.layout.activity_tela_chat)
 
         setaVoltar = findViewById(R.id.SetaVoltar)
+        configurarEventos()
 
     }
 

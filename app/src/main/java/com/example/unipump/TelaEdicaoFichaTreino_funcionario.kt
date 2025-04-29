@@ -154,15 +154,15 @@ class TelaEdicaoFichaTreino_funcionario : AppCompatActivity() {
 
 
         btnLixeiraExercio1.setOnClickListener {
-            excluirLinearLayout(exercio1)
+            excluirLinearLayoutPaiDoPai(exercio1)
         }
 
         btnLixeiraExercio2.setOnClickListener {
-            excluirLinearLayout(exercio2)
+            excluirLinearLayoutPaiDoPai(exercio2)
         }
 
-        btnLixeiraExercio2.setOnClickListener {
-            excluirLinearLayout(exercio3)
+        btnLixeiraExercio3.setOnClickListener {
+            excluirLinearLayoutPaiDoPai(exercio3)
         }
 
 
@@ -321,4 +321,15 @@ class TelaEdicaoFichaTreino_funcionario : AppCompatActivity() {
         // Verifica se o parent é um ViewGroup e então remove a View
         (linearLayout.parent as? ViewGroup)?.removeView(linearLayout)
     }
+
+    fun excluirLinearLayoutPaiDoPai(linearLayout: LinearLayout) {
+        // Primeiro, obtemos o pai do LinearLayout
+        val parent = linearLayout.parent as? ViewGroup
+        // Depois, obtemos o avô (paidopai)
+        val grandParent = parent?.parent as? ViewGroup
+
+        // Remove o paidopai (o avô) se existir
+        grandParent?.removeView(parent)
+    }
+
 }

@@ -136,6 +136,7 @@
 
                     <!--Conteiner para exerciso e repetição (Coscta e Biceps)-->
                     <LinearLayout
+                        android:id="@+id/paidopai1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
@@ -438,6 +439,7 @@
 
                     <!--Conteiner para exerciso e repetição (Coscta e Bicep)-->
                     <LinearLayout
+                        android:id="@+id/paidopai2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
@@ -709,6 +711,7 @@
 
                     <!--Conteiner para exerciso e repetição (Peito )-->
                     <LinearLayout
+                        android:id="@+id/paidopai3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"

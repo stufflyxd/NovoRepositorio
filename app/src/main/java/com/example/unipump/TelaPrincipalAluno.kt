@@ -16,7 +16,9 @@ class TelaPrincipalAluno : AppCompatActivity() {
 
     private lateinit var visualizar: Button
     private lateinit var linkRelatorio: TextView
-    private lateinit var notificacao: ImageView
+    private lateinit var notificacao: ImageButton
+
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,15 +30,18 @@ class TelaPrincipalAluno : AppCompatActivity() {
 
 
 
-            // 2. Visualizar
-            visualizar = findViewById(R.id.btn_visualizar)
-            onClickVisualizar()
-            // 3. Relatorio
-            linkRelatorio = findViewById(R.id.link_relatorio)
-            onClickRelatorio()
+        // 2. Visualizar
+        visualizar = findViewById(R.id.btn_visualizar)
+        onClickVisualizar()
+        // 3. Relatorio
+        linkRelatorio = findViewById(R.id.link_relatorio)
+        onClickRelatorio()
 
-            // Notificação
-            notificacao = findViewById(R.id.btn_notificacao)
+        // Notificação
+        notificacao = findViewById(R.id.btn_notificacao)
+        onClickNotificao()
+
+
 
 
 
@@ -62,7 +67,8 @@ class TelaPrincipalAluno : AppCompatActivity() {
                 }
 
                 R.id.nav_chat -> {
-                    //
+                    val intent = Intent(this,TelaChat::class.java)
+                    startActivity(intent)
                     true
                 }
 
@@ -92,8 +98,8 @@ class TelaPrincipalAluno : AppCompatActivity() {
 
     private fun onClickNotificao(){
         notificacao.setOnClickListener {
-            // val intent = Intent(this, ::class.java)
-            //startActivity(intent)
+            val intent = Intent(this, TelaNotificacao_funcionario::class.java)
+            startActivity(intent)
         }
     }
 }
