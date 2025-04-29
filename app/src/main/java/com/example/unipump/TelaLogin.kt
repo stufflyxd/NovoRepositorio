@@ -31,6 +31,13 @@ class TelaLogin : AppCompatActivity() {
         edtSenha = findViewById(R.id.etSenha)
         btnEntrar = findViewById(R.id.btnEntrar)
 
+        var tipo = intent.getStringExtra("tipo")
+        if (tipo == "aluno"){
+            edtEmail.hint = "Email ou Telefone"
+        } else if (tipo == "funcionario"){
+            edtEmail.hint = "Id"
+        }
+
         // Configura os eventos
         configurarEventos()
 
@@ -42,6 +49,9 @@ class TelaLogin : AppCompatActivity() {
     }
 
     private fun configurarEventos() {
+
+        val tipo = intent.getStringExtra("tipo")
+
         btnVoltar.setOnClickListener {
             val intent = Intent(this, TelaInicial::class.java)
             startActivity(intent)
@@ -49,6 +59,11 @@ class TelaLogin : AppCompatActivity() {
 
         textEsqueceuSenha.setOnClickListener {
             val intent = Intent(this, TelaEsqueceuSenha::class.java)
+            if (tipo == "aluno"){
+                intent.putExtra("tipo", "aluno")
+            } else if (tipo == "funcionario"){
+                intent.putExtra("tipo", "funcionario")
+            }
             startActivity(intent)
         }
 

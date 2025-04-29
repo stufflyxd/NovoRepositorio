@@ -32,13 +32,17 @@ class TelaEsqueceuSenha2 : AppCompatActivity() {
         textInstruction.text = when {
             isValidEmail(tipo) -> "Antes de enviarmos o código, $tipo é o E-mail correto?"
             isValidPhone(tipo) -> "Antes de enviarmos o código, $tipo é o seu número correto?"
-            else -> "Tipo inválido"
+            else -> "tipo invalido"
         }
     }
 
 
 
     private fun configurarEventos() {
+
+        val tipoUsuario = intent.getStringExtra("tipoUsuario")
+        val tipo = intent.getStringExtra("tipo") ?: ""
+
         btnEditar.setOnClickListener {
             val intent = Intent(this, TelaEsqueceuSenha::class.java)
             startActivity(intent)
@@ -46,9 +50,13 @@ class TelaEsqueceuSenha2 : AppCompatActivity() {
 
         btnConfirmar.setOnClickListener {
             val intent = Intent(this, TelaEsqueceuSenha3::class.java)
-            val tipo = intent.getStringExtra("tipo")
             intent.putExtra("tipo", tipo)
             intent.putExtra("codigoEnviado", "12345")
+            if (tipoUsuario == "aluno"){
+                intent.putExtra("tipoUsuario", "aluno")
+            } else if (tipoUsuario == "funcionario"){
+                intent.putExtra("tipoUsuario", "funcionario")
+            }
             startActivity(intent)
         }
     }

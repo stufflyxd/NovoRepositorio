@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".TelaInformacaoPessoal_funcionario">
 
     <ScrollView
@@ -22,12 +23,12 @@
             android:paddingBottom="16dp">
 
             <ImageView
-                android:id="@+id/btn_back"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/back_button"
                 android:scaleType="centerInside"
                 android:layout_marginTop="50dp"
+                android:contentDescription="@string/seta_voltar"
                 android:layout_marginStart="20dp"/>
 
 
@@ -80,7 +81,7 @@
                         <EditText
                             android:id="@+id/campo_nome_usuario"
                             android:layout_width="290dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="45dp"
                             android:inputType="text"
                             android:text="Bolofofo"
                             android:textColor="@color/white" />
@@ -90,7 +91,8 @@
                             android:layout_height="wrap_content"
                             android:src="@drawable/icon_pencil"
                             android:layout_gravity="center"
-                            android:layout_weight="1" />
+                            android:layout_weight="1"
+                            android:contentDescription="@string/imagem_pincel"/>
                     </LinearLayout>
                 </LinearLayout>
 
@@ -116,7 +118,7 @@
                         <EditText
                             android:id="@+id/campo_endereco_usuario"
                             android:layout_width="290dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="46dp"
                             android:autofillHints=""
                             android:inputType="text"
                             android:text="AV. Washington Soarez"
@@ -127,7 +129,8 @@
                             android:layout_height="wrap_content"
                             android:src="@drawable/icon_pencil"
                             android:layout_gravity="center"
-                            android:layout_weight="1" />
+                            android:layout_weight="1"
+                            android:contentDescription="@string/imagem_pincel"/>
                     </LinearLayout>
                 </LinearLayout>
 
@@ -164,7 +167,8 @@
                             android:layout_height="wrap_content"
                             android:src="@drawable/icon_pencil"
                             android:layout_gravity="center"
-                            android:layout_weight="1" />
+                            android:layout_weight="1"
+                            android:contentDescription="@string/imagem_pincel"/>
                     </LinearLayout>
                 </LinearLayout>
 
@@ -201,7 +205,8 @@
                             android:layout_height="wrap_content"
                             android:src="@drawable/icon_pencil"
                             android:layout_gravity="center"
-                            android:layout_weight="1" />
+                            android:layout_weight="1"
+                            android:contentDescription="@string/imagem_pincel"/>
                     </LinearLayout>
 
                 </LinearLayout>
@@ -305,7 +310,30 @@
 
             </LinearLayout>
 
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.049"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/back_button" />
+
         </LinearLayout>
     </ScrollView>
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        app:menu="@menu/menu_bottom_nav"
+        app:labelVisibilityMode="labeled"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

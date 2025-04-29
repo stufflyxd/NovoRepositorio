@@ -35,6 +35,8 @@ class TelaEsqueceuSenha4 : AppCompatActivity() {
             val novaSenha = edtNovaSenha.text.toString()
             val confirmaSenha = edtConfirmaSenha.text.toString()
 
+            val tipoUsuario = intent.getStringExtra("tipoUsuario")
+
             if (novaSenha == confirmaSenha) {
                 // Atualiza a senha salva
                 senhaSalva = novaSenha
@@ -45,6 +47,13 @@ class TelaEsqueceuSenha4 : AppCompatActivity() {
                 // Redireciona para a tela de login
                 val intent = Intent(this, TelaLogin::class.java)
                 intent.putExtra("novaSenha", novaSenha)  // Passa a nova senha para a tela de login
+
+                if (tipoUsuario == "aluno"){
+                    intent.putExtra("tipo", "aluno")
+                } else if (tipoUsuario == "funcionario"){
+                    intent.putExtra("tipo", "funcionario")
+                }
+
                 startActivity(intent)
                 finish() // Finaliza a tela atual
             } else {

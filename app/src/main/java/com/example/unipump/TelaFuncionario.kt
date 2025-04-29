@@ -2,13 +2,10 @@ package com.example.unipump
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.GridLayout
 import android.widget.ImageButton
 import android.widget.LinearLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class TelaFuncionario : AppCompatActivity() {
@@ -138,14 +135,14 @@ class TelaFuncionario : AppCompatActivity() {
 
                 R.id.nav_chat -> {
                     // Abre a tela de chat
-                    val intent = Intent(this, TelaChat_funcionario::class.java)
+                    val intent = Intent(this, TelaChat::class.java)
                     startActivity(intent)
                     true
                 }
 
                 R.id.nav_config -> {
                     // Abre a tela de configurações
-                    val intent = Intent(this, TelaConfig::class.java)
+                    val intent = Intent(this, TelaConfiguracao_Funcionario::class.java)
                     startActivity(intent)
                     true
                 }

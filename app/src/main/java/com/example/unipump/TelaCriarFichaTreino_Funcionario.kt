@@ -90,20 +90,22 @@ class TelaCriarFichaTreino_Funcionario : AppCompatActivity() {
         btnNavegacao.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_inicio -> {
-                    // O que acontece quando o item "Início" é clicado (permanece na tela atual)
+                    // O que acontece quando o item "Início" é clicado
+                    val intent = Intent(this, TelaFuncionario::class.java)
+                    startActivity(intent)
                     true
                 }
 
                 R.id.nav_chat -> {
                     // Abre a tela de chat
-                    val intent = Intent(this, TelaChat_funcionario::class.java)
+                    val intent = Intent(this, TelaChat::class.java)
                     startActivity(intent)
                     true
                 }
 
                 R.id.nav_config -> {
                     // Abre a tela de configurações
-                    val intent = Intent(this, TelaConfig::class.java)
+                    val intent = Intent(this, TelaConfiguracao_Funcionario::class.java)
                     startActivity(intent)
                     true
                 }

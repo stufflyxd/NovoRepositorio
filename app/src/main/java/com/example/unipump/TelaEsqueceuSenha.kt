@@ -35,6 +35,8 @@ class TelaEsqueceuSenha : AppCompatActivity() {
     private fun onEnviarClick() {
         val emailOuTelefone = edtEmailOuTelefone.text.toString()
 
+        val tipoUsuario = intent.getStringExtra("tipo")
+
 
         if (emailOuTelefone.isNotEmpty()) {
 
@@ -42,6 +44,11 @@ class TelaEsqueceuSenha : AppCompatActivity() {
                 // Se for um e-mail válido, redireciona para a próxima tela
                 val intent = Intent(this, TelaEsqueceuSenha2::class.java)
                 intent.putExtra("tipo",emailOuTelefone)
+                if (tipoUsuario == "aluno"){
+                    intent.putExtra("tipoUsuario", "aluno")
+                } else if (tipoUsuario == "funcionario"){
+                    intent.putExtra("tipoUsuario", "funcionario")
+                }
                 startActivity(intent)
             }
 
@@ -49,6 +56,11 @@ class TelaEsqueceuSenha : AppCompatActivity() {
                 // Se for um número de telefone válido, redireciona para a próxima tela
                 val intent = Intent(this, TelaEsqueceuSenha2::class.java)
                 intent.putExtra("tipo", emailOuTelefone)
+                if (tipoUsuario == "aluno"){
+                    intent.putExtra("tipoUsuario", "aluno")
+                } else if (tipoUsuario == "funcionario"){
+                    intent.putExtra("tipoUsuario", "funcionario")
+                }
                 startActivity(intent)
             }
             else {

@@ -46,7 +46,7 @@ class TelaEsqueceuSenha3 : AppCompatActivity() {
         textInstruction.text = when {
             isValidEmail(tipo) -> "Insira no campo abaixo o código de verificação de 5 digitos enviado para o seu $tipo"
             isValidPhone(tipo) -> "Insira no campo abaixo o código de verificação de 5 digitos enviado para o seu $tipo"
-            else -> "Tipo inválido"
+            else -> "Problema na tela esqueceu senha 2 e 3"
         }
 
         configurarEventos()
@@ -66,6 +66,9 @@ class TelaEsqueceuSenha3 : AppCompatActivity() {
 
     // Função para validar o código
     private fun validarCodigo() {
+
+        val tipoUsuario = intent.getStringExtra("tipoUsuario")
+
         val codigoInserido = edtCodigo1.text.toString() +
                 edtCodigo2.text.toString() +
                 edtCodigo3.text.toString() +
@@ -77,6 +80,13 @@ class TelaEsqueceuSenha3 : AppCompatActivity() {
             // Código correto, redireciona para a próxima tela
             val intent = Intent(this, TelaEsqueceuSenha4::class.java)
             startActivity(intent)
+
+            if (tipoUsuario == "aluno"){
+                intent.putExtra("tipoUsuario", "aluno")
+            } else if (tipoUsuario == "funcionario"){
+                intent.putExtra("tipoUsuario", "funcionario")
+            }
+
             finish() // Finaliza a atividade atual
         } else {
             // Código incorreto, exibe uma mensagem de erro
