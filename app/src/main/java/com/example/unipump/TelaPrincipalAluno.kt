@@ -1,6 +1,7 @@
 package com.example.unipump
 
 import android.content.ClipData.Item
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -9,6 +10,7 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -17,6 +19,8 @@ class TelaPrincipalAluno : AppCompatActivity() {
     private lateinit var visualizar: Button
     private lateinit var linkRelatorio: TextView
     private lateinit var notificacao: ImageButton
+    private lateinit var btnFechar: ImageButton
+    private lateinit var btnAcessibilidade: ImageButton
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,7 +29,6 @@ class TelaPrincipalAluno : AppCompatActivity() {
 
         // 1. Acessar o BottomNavigationView
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
-
 
 
         // 2. Visualizar
@@ -38,6 +41,14 @@ class TelaPrincipalAluno : AppCompatActivity() {
         // Notificação
         notificacao = findViewById(R.id.btn_notificacao)
         onClickNotificao()
+
+
+        // Dialog
+        btnAcessibilidade = findViewById(R.id.btn_acessibilidade)
+        btnAcessibilidade.setOnClickListener {
+            mostrarDialogAcessibilidade(this)
+        }
+
 
 
         bottomNavigationView.setOnItemSelectedListener { item ->
@@ -96,6 +107,26 @@ class TelaPrincipalAluno : AppCompatActivity() {
             val intent = Intent(this, TelaNotificacao_funcionario::class.java)
             startActivity(intent)
         }
+    }
+
+    private fun mostrarDialogAcessibilidade(context: Context){
+        val dialogView = layoutInflater.inflate(R.layout.dialog_acessibilidade, null)
+
+        val dialog = AlertDialog.Builder(context)
+            .setView(dialogView)
+            .create()
+
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        dialog.show()
+
+        btnFechar = dialogView.findViewById(R.id.btnFecharDialog)
+
+        btnFechar.setOnClickListener {
+            dialog.dismiss()
+        }
+
+
+
     }
 }
 

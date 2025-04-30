@@ -29,7 +29,7 @@
             android:layout_alignParentEnd="true"
             android:background="@android:color/transparent"
             android:src="@drawable/close"
-            android:contentDescription="Fechar" />
+            android:contentDescription="Fechar"/>
     </RelativeLayout>
 
     <!-- Conteúdo principal (1ª opção) -->
@@ -62,9 +62,11 @@
                 android:id="@+id/btnDiminuirFonte"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:contentDescription="Diminuir fonte" />
+                android:contentDescription="Diminuir fonte"
+                android:src="@drawable/menos"
+                android:background="@android:color/darker_gray"/>
 <!--                android:background="@drawable/bg_botao_azul"-->
-<!--                android:src="@drawable/ic_menos"-->
+
 
 
             <TextView

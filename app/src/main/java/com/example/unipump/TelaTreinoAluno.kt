@@ -2,6 +2,7 @@ package com.example.unipump
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageButton
 import android.widget.LinearLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -12,7 +13,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class TelaTreinoAluno : AppCompatActivity() {
 
     private lateinit var ficha_1: LinearLayout
-
+    private lateinit var notificacao: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +24,9 @@ class TelaTreinoAluno : AppCompatActivity() {
 
         // 2. Concteinar como botão
         ficha_1 = findViewById(R.id.container_ficha1)
+
+        notificacao = findViewById(R.id.btn_notificacao)
+        onClickNotificao()
 
         ficha_1.setOnClickListener {
             val intent = Intent(this, TelaFichaTreino::class.java)
@@ -53,6 +57,13 @@ class TelaTreinoAluno : AppCompatActivity() {
                 }
                 else -> false
             }
+        }
+    }
+
+    private fun onClickNotificao(){
+        notificacao.setOnClickListener {
+            val intent = Intent(this, TelaNotificacao_funcionario::class.java)
+            startActivity(intent)
         }
     }
 }

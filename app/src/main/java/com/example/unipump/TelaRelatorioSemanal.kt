@@ -6,6 +6,7 @@ import android.widget.CalendarView
 import android.widget.ListView
 import android.widget.ArrayAdapter
 import android.widget.ImageButton
+import android.widget.TextView
 
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -16,17 +17,20 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class TelaRelatorioSemanal : AppCompatActivity() {
     private lateinit var voltar: ImageButton
+    private lateinit var todosReg: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tela_relatorio_semanal)
 
         voltar = findViewById(R.id.SetaVoltarTelaCriarFicha)
-
-        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
-
+        todosReg = findViewById(R.id.todosRegistros)
         configEventos()
 
+
+
+
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_inicio -> {
@@ -57,6 +61,11 @@ class TelaRelatorioSemanal : AppCompatActivity() {
     private fun configEventos(){
         voltar.setOnClickListener{
             finish()
+        }
+
+        todosReg.setOnClickListener {
+            val intent = Intent(this, TelaDadosDeTreino:: class.java)
+            startActivity(intent)
         }
     }
 

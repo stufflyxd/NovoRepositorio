@@ -144,7 +144,7 @@
 
     <!-- Ver Todos os Registros -->
     <TextView
-        android:id="@+id/text_all_records"
+        android:id="@+id/todosRegistros"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
