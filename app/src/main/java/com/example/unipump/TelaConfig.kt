@@ -1,14 +1,16 @@
 package com.example.unipump
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.appcompat.app.AlertDialog
+
 
 class TelaConfig : AppCompatActivity() {
 
@@ -35,7 +37,8 @@ class TelaConfig : AppCompatActivity() {
 
         trainingData.setOnClickListener {
             // tela dados de treino
-            // val intent = Intent(this)
+            val intent = Intent(this, TelaDadosDeTreino::class.java)
+            startActivity(intent)
         }
 
         preferences.setOnClickListener {
@@ -46,17 +49,20 @@ class TelaConfig : AppCompatActivity() {
 
         support.setOnClickListener {
             // tela chat de suporte
-            // val intent = Intent(this)
+            val intent = Intent(this, TelaChat::class.java)
+            startActivity(intent)
         }
 
         logoutButton.setOnClickListener {
-            Toast.makeText(this, "Você foi deslogado", Toast.LENGTH_SHORT).show()
-            val intent = Intent(this, TelaInicial::class.java)
-            startActivity(intent)
-            // adicionar lógica para voltar para a tela de login
+            mostrarDialogLogout(this)
         }
 
-
+//        logoutButton.setOnClickListener {
+//            Toast.makeText(this, "Você foi deslogado", Toast.LENGTH_SHORT).show()
+//            val intent = Intent(this, TelaInicial::class.java)
+//            startActivity(intent)
+//            // adicionar lógica para voltar para a tela de login
+//        }
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_inicio -> {
@@ -84,4 +90,35 @@ class TelaConfig : AppCompatActivity() {
             }
         }
     }
+
+    private fun mostrarDialogLogout(context: Context) {
+        val dialogView = layoutInflater.inflate(R.layout.dialog_quit_layout, null)
+
+        val dialog = AlertDialog.Builder(context)
+            .setView(dialogView)
+            .create()
+
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        dialog.show()
+
+        val btnCancelar = dialogView.findViewById<Button>(R.id.btnCancelar)
+        val btnConfirmar = dialogView.findViewById<Button>(R.id.btnConfirmar)
+
+        btnCancelar.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        btnConfirmar.setOnClickListener {
+            dialog.dismiss()
+            // Ação para deslogar
+            Toast.makeText(context, "Deslogando...", Toast.LENGTH_SHORT).show()
+
+            // FirebaseAuth.getInstance().signOut()
+            val intent = Intent(context, TelaLogin::class.java)
+            context.startActivity(intent)
+            intent.putExtra("tipo", "aluno") // Adicione isso
+            startActivity(intent)
+        }
+    }
+
 }

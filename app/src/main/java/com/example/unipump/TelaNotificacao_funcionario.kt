@@ -12,23 +12,24 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class TelaNotificacao_funcionario : AppCompatActivity() {
 
     private lateinit var btnSetaVoltar : ImageButton
-    private lateinit var btnNavegacao : BottomNavigationView
+    private lateinit var btnNavegacao: BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_tela_notificacao_funcionario)
 
         btnSetaVoltar = findViewById(R.id.SetaVoltar)
+
+        val btnNavegacao = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
 
 
         // Definindo o clique do botão de voltar
         btnSetaVoltar.setOnClickListener {
-            onBackPressed() // Isso chama o comportamento de voltar para a tela anterior
+            finish() // Isso chama o comportamento de voltar para a tela anterior
         }
 
-        btnNavegacao.setOnNavigationItemSelectedListener { item ->
+        btnNavegacao.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_inicio -> {
                     // O que acontece quando o item "Início" é clicado

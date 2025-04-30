@@ -19,8 +19,6 @@ class TelaPrincipalAluno : AppCompatActivity() {
     private lateinit var notificacao: ImageButton
 
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tela_principal_aluno)
@@ -40,9 +38,6 @@ class TelaPrincipalAluno : AppCompatActivity() {
         // Notificação
         notificacao = findViewById(R.id.btn_notificacao)
         onClickNotificao()
-
-
-
 
 
         bottomNavigationView.setOnItemSelectedListener { item ->

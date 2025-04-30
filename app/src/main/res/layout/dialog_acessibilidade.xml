@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_dialog"
+    android:padding="16dp">
+
+    <!-- Cabeçalho -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/azul_escuro"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/tvTituloAcessibilidade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Menu de Acessibilidade"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/btnFecharDialog"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/close"
+            android:contentDescription="Fechar" />
+    </RelativeLayout>
+
+    <!-- Conteúdo principal (1ª opção) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/rounded_background"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ajustar tamanho da fonte"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:drawablePadding="8dp" />
+<!--            android:drawableStart="@drawable/ic_text_size"-->
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="12dp">
+
+            <ImageButton
+                android:id="@+id/btnDiminuirFonte"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:contentDescription="Diminuir fonte" />
+<!--                android:background="@drawable/bg_botao_azul"-->
+<!--                android:src="@drawable/ic_menos"-->
+
+
+            <TextView
+                android:id="@+id/tvPorcentagemFonte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100%"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp" />
+
+            <ImageButton
+                android:id="@+id/btnAumentarFonte"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:contentDescription="Aumentar fonte" />
+<!--                android:background="@drawable/bg_botao_azul"-->
+<!--                android:src="@drawable/ic_mais"-->
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Aqui você poderá adicionar mais opções de acessibilidade futuramente -->
+</LinearLayout>
